@@ -8,10 +8,12 @@ public class Main {
         while (true) {
             try {
                 Scanner scanner = new Scanner(System.in);
+                System.out.println("Введите выражение:" );
                 Operation operation = new Operation(scanner.nextLine());
-                System.out.println(operation.flagRoman ? operation.resultForRoman() : operation.resultForArabic());
+                System.out.println("Ответ: " + (operation.flagRoman ? operation.resultForRoman() : operation.resultForArabic()));
             } catch (MyException e) {
                 e.getMessage();
+                System.out.print("Попробуйте еще раз: ");
             }
         }
     }

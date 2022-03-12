@@ -21,7 +21,6 @@ public class Operation { //класс операции
     public Operation(String str) throws MyException {
         String[] masStr = str.trim().split(" ");
         if (masStr.length < 3) {
-            /*Проверка на 1-ин введеный символ */
             throw new MyException("throws Exception //т.к. строка не является математической операцией");
         }
         this.ListNumbers.addAll(Arrays.asList(masStr));
@@ -30,7 +29,6 @@ public class Operation { //класс операции
         this.operation = ListNumbers.get(1);
 
         if (masStr.length > 3) {
-            /*Проверка на операции с более чем двумя операндами */
             throw new MyException("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         } else if (!validOperand.contains(operation)) {
             throw new MyException("throws Exception //т.к.  Неизвестный  операнд, используйте: (+, -, /, *) ");
@@ -47,7 +45,6 @@ public class Operation { //класс операции
             }
         } else {
             flagRoman = false;
-
         }
     }
 
